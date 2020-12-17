@@ -1,0 +1,14 @@
+{
+  "name": "mini_blog",
+  "version": "1.0.0",
+  "description": "王小右博客",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "王小右",
+  "license": "ISC",
+  "dependencies": {
+    "weui-miniprogram": "^1.0.6"
+  }
+}

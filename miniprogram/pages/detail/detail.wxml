@@ -1,0 +1,21 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<wxs module="DateFormat" src="../../utils/date_format.wxs"></wxs>
+
+<view>
+  <image class="banner-img" bindtap="previewImage" data-src="{{article.cover}}" src="{{ article.cover }}" ></image>
+
+  <view class="title">
+    <text>{{ article.title }}</text>
+  </view>
+
+  <view class="article-other-info">
+    <image class="item-icon" src="/images/icon/view.png"></image>
+    <text>{{ article.click_count }}</text>
+
+    <image class="item-icon" src="/images/icon/time.png"> </image>
+    <text>{{ DateFormat.getDate(article.add_time) }}</text>
+  </view>
+  <view class="content"> 
+    <wemark md="{{ article.content }}" link highlight type="wemark"></wemark>
+  </view>
+</view>

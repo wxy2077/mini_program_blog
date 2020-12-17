@@ -1,0 +1,50 @@
+<!--index.wxml-->
+
+<wxs module="DateFormat" src="../../utils/date_format.wxs"></wxs>
+
+<view class="page">
+    <swiper 
+      indicator-dots="true"
+      autoplay="true" 
+    > 
+      <swiper-item wx:for="{{ recommendList }}" wx:key="href" wx:for-item="i">
+        <view class="banner-item">
+          <image data-href="{{ i.article_url }}" bind:tap="onGoToDetail"
+            class="banner-item-img" src="{{ i.cover }}" >
+          </image>
+          <text class="banner-item-title">{{ i.title }}</text>
+        </view>
+        
+      </swiper-item>
+      
+    </swiper>
+
+    <view class="article-list" wx:for="{{ articleList }}" wx:key="article_url">
+      
+      <view class="article-item" data-href="{{ item.article_url }}" bind:tap="onGoToDetail">
+        <view class="article-item-img">
+          <image  src="{{ item.cover }}"> </image>
+        </view>
+       
+
+        <view class="article-item-info"> 
+          <text class="article-item-title">{{ item.title }}</text>
+
+          <view class="article-other-info">
+            <image class="item-icon" src="/images/icon/view.png"></image>
+            <text>{{ item.click_count }}</text>
+
+            <image class="item-icon" src="/images/icon/time.png"> </image>
+            <text>{{ DateFormat.getDate(item.add_time) }}</text>
+          </view>
+          
+        </view>
+
+      </view>
+
+    </view>
+
+    <view class="over-line" wx:if="{{ overLine }}">
+      <text>----------------------我是有底线的----------------------</text>
+    </view>
+</view>

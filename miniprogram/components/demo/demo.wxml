@@ -1,0 +1,3 @@
+<!--components/demo/demo.wxml-->
+<!-- 一个示例自定义组件 -->
+<text class="demo-text">{{ demoText }}</text>

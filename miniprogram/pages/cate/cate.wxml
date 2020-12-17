@@ -1,0 +1,39 @@
+<!--miniprogram/pages/cate/cate.wxml-->
+<wxs module="DateFormat" src="../../utils/date_format.wxs"></wxs>
+
+<scroll-view scroll-x="true" scroll-left="{{ 100 }}">
+  <view class="navbar" scroll-x="true" scroll-left="{{ 100 }}">
+        <view class="navbar-item {{selectedTab === index ? 'selected' : ''}}" 
+        wx:for="{{tabs}}" wx:key="index" bindtap="switchTab" data-tabindex="{{index}}">
+          {{item.name}}
+        </view>
+  </view>
+</scroll-view>
+
+
+<swiper class="swiper-box"  current="{{selectedTab}}" bindchange="swiperChange" circular="true">
+
+    <swiper-item wx:for="{{ tabs }}" wx:key="index">
+      <scroll-view  scroll-y="true" class="article-list" data-cate-id="{{ item.id }}" bindscrolltolower="loadMore" >
+        <view class="article-item" wx:for="{{ articleList }}" wx:key="article_url" data-href="{{ item.article_url }}" bind:tap="onGoToDetail">
+          <view class="article-item-img">
+            <image  src="{{ item.cover }}"> </image>
+          </view>
+        
+          <view class="article-item-info"> 
+            <text class="article-item-title">{{ item.title }}</text>
+            <view class="article-other-info">
+              <image class="item-icon" src="/images/icon/view.png"></image>
+              <text>{{ item.click_count }}</text>
+              <image class="item-icon" src="/images/icon/time.png"> </image>
+              <text>{{ DateFormat.getDate(item.add_time) }}</text>
+            </view>
+          </view>
+
+        </view>
+
+     </scroll-view>
+      
+    </swiper-item>
+
+</swiper>

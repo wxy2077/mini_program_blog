@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/cate/cate",
+    "pages/profile/profile",
+    "pages/find/find",
+    "pages/detail/detail"
+  ],
+  "entryPagePath": "pages/welcome/welcome",
+  "window": {
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "王小右博客",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#333333",
+    "position": "bottom",
+    "color": "#999999",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/icon/home_hide.png",
+        "selectedIconPath": "/images/icon/home.png"
+      },
+      {
+        "text": "分类",
+        "pagePath": "pages/cate/cate",
+        "iconPath": "/images/icon/cate_hide.png",
+        "selectedIconPath": "/images/icon/cate.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

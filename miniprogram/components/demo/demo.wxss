@@ -1,0 +1,5 @@
+/* components/demo/demo.wxss */
+
+.demo-text{
+  color: yellow;
+}

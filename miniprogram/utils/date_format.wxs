@@ -1,0 +1,22 @@
+
+/**
+ * 
+ * 格式化日期过滤器
+ * 
+*/
+
+var DateFormat = {
+  getDate: function (time) {
+    if(time){
+      time = time.replace("T", " ")
+      time = time.replace("+08:00", "")
+      return time
+    }else{
+      return time
+    }
+  }
+ }
+
+ module.exports = {
+   getDate: DateFormat.getDate
+ }

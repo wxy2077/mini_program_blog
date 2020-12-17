@@ -1,0 +1,38 @@
+/* miniprogram/pages/detail/detail.wxss */
+
+.banner-img{
+  width: 100%;
+  height: 400rpx;
+}
+
+.title{
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: 600;
+  color: #3498DB;
+  padding: 5rpx 10rpx
+}
+
+.article-other-info{
+  display: flex;
+  justify-content: center;
+  margin: 20rpx auto;
+}
+.article-other-info text{
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  line-height: 25rpx;
+  color: #AEB6BF;
+}
+
+.item-icon{
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+}
+
+.content{
+  font-size: 25rpx;
+  padding: 20rpx;
+  color: #34495E
+}

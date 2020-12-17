@@ -1,0 +1,31 @@
+
+# Gin-Vue-Admin Global Configuration
+
+# jwt configuration
+jwt:
+  signing-key: 'wxykkkkk'
+
+
+# zap logger configuration
+zap:
+  level: 'info'
+  format: 'console'
+  prefix: '[Blog->]'
+  director: 'log'
+  link-name: 'latest_log'
+  show-line: true
+  encode-level: 'LowercaseColorLevelEncoder'
+  stacktrace-key: 'stacktrace'
+  log-in-console: true
+
+
+# mysql connect configuration
+mysql:
+  path: '172.16.137.129:3306'
+  config: 'charset=utf8mb4&parseTime=True&loc=Local'
+  db-name: 'mini_blog'
+  username: 'root'
+  password: 'Admin12345-'
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: false

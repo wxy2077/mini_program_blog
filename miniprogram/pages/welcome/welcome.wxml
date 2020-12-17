@@ -1,0 +1,14 @@
+<!--miniprogram/pages/welcome/welcome.wxml-->
+
+<view class="container">
+
+  <image class="background" src="/images/background.jpg"></image>
+
+  <text class="blog-theme">{{ blog_theme }}</text>
+  <image class="avatar" src="{{ avatar }}"></image>
+  <text class="welcome-text">{{ welcome_text }}</text>
+  <text class="but-inblog" bindtap="inblog">开始阅读</text>
+  <!-- 测试组件 -->
+  <!-- <demo-test demo-text="测试文本" />   -->
+
+</view>
