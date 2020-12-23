@@ -19,6 +19,6 @@ App({
   onHide: function() {},
   onError: function(msg) {},
   globalData: {
-    "BaseUrl": "http://127.0.0.1:7000"
+    "BaseUrl": "https://www.charmcode.cn/mini/api"
   },
 })

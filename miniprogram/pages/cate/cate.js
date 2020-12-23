@@ -32,6 +32,7 @@ Page({
     this.setData({
       selectedTab: event.detail.current
     });
+    this.fetchCateArticle(this.data.tabs[this.data.selectedTab].id)
   },
 
   // 获取分类
