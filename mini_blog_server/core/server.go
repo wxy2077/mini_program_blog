@@ -9,13 +9,16 @@
 **/
 package core
 
-
 import (
 	"mini_blog_server/initialize"
 )
 
-
 func RunWindowsServer(addr string) {
+
+	// 初始化redis
+	initialize.Redis()
+
+	// 初始化路由
 	Router := initialize.Routers()
 
 	_ = Router.Run(addr)

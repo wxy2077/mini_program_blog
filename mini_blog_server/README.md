@@ -8,9 +8,10 @@
 
 ## 特点
 
-- `zap`   日志管理
-- `viper` 读取配置文件
-- `gorm`  数据库操作
+- `zap`         日志管理
+- `viper`       读取配置文件
+- `gorm`        数据库操作
+- `gin-swagger` 文档
 
 
 ## 目录说明
@@ -76,10 +77,23 @@
 
 ## 如何运行
 
+#### 生成swagger文档
+```shell
+swag init
+```
+
 #### 调试
 
 ```shell
 go run main.go
+```
+
+#### 部署(编译)
+```shell
+go build -o "mini_blog_api"
+
+// 添加参数指定运行平台 编译
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  -o "mini_blog_api"
 ```
 
 

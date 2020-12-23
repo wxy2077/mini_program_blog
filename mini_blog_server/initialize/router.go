@@ -9,9 +9,11 @@
 **/
 package initialize
 
-
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/swaggo/files"
+	"github.com/swaggo/gin-swagger"
+	_ "mini_blog_server/docs"
 	"mini_blog_server/middleware"
 	"mini_blog_server/router"
 )
@@ -21,9 +23,10 @@ func Routers() *gin.Engine {
 
 	// 跨域
 	Router.Use(middleware.CORSMiddleware())
+	Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// 方便统一添加路由组前缀 多服务器上线使用
-	ApiGroup := Router.Group("")
+	ApiGroup := Router.Group("/mini/api")
 
 	router.InitArticleRouter(ApiGroup) // 注册文章路由
 

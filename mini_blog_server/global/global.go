@@ -10,6 +10,7 @@
 package global
 
 import (
+	"github.com/go-redis/redis"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
@@ -21,4 +22,5 @@ var (
 	MiNI_VP     *viper.Viper
 	MINI_CONFIG config.Server
 	MINI_LOG    *zap.Logger
+	MINI_REDIS  *redis.Client
 )

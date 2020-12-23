@@ -29,3 +29,10 @@ mysql:
   max-idle-conns: 10
   max-open-conns: 100
   log-mode: false
+
+
+# redis configuration
+redis:
+  db: 0
+  addr: '172.16.137.129:6379'
+  password: 'root12345'
