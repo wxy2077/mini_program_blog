@@ -20,13 +20,12 @@ type Response struct {
 	Data interface{} `json:"data"`
 }
 
-
 const (
 	ERROR   = 400
 	SUCCESS = 200
 )
 
-func Result(code int, msg string, data interface{},  c *gin.Context) {
+func Result(code int, msg string, data interface{}, c *gin.Context) {
 	// 开始时间
 	c.JSON(http.StatusOK, Response{
 		code,
@@ -36,15 +35,15 @@ func Result(code int, msg string, data interface{},  c *gin.Context) {
 }
 
 func Ok(c *gin.Context) {
-	Result(SUCCESS,"操作成功", map[string]interface{}{}, c)
+	Result(SUCCESS, "success", map[string]interface{}{}, c)
 }
 
 func OkWithMessage(message string, c *gin.Context) {
-	Result(SUCCESS,  message, map[string]interface{}{}, c)
+	Result(SUCCESS, message, map[string]interface{}{}, c)
 }
 
 func OkWithData(data interface{}, c *gin.Context) {
-	Result(SUCCESS, "操作成功", data, c)
+	Result(SUCCESS, "success", data, c)
 }
 
 func OkWithDetailed(data interface{}, message string, c *gin.Context) {
@@ -52,7 +51,7 @@ func OkWithDetailed(data interface{}, message string, c *gin.Context) {
 }
 
 func Fail(c *gin.Context) {
-	Result(ERROR, "操作失败", map[string]interface{}{}, c)
+	Result(ERROR, "failure", map[string]interface{}{}, c)
 }
 
 func FailWithMessage(message string, c *gin.Context) {

@@ -1,0 +1,98 @@
+definitions:
+  request.ArticleCategory:
+    properties:
+      cateId:
+        type: integer
+    type: object
+  request.ArticleDetail:
+    properties:
+      href:
+        type: string
+    type: object
+  request.PageInfo:
+    properties:
+      page:
+        type: integer
+      pageSize:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /mini/api/article/get/category:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"msg":"success","data":{}}'
+          schema:
+            type: string
+      summary: 获取文章分类
+      tags:
+      - ArticleAPI
+  /mini/api/article/get/detail:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 文章href链接
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.ArticleDetail'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"msg":"success","data":{}}'
+          schema:
+            type: string
+      summary: 获取文章详情
+      tags:
+      - ArticleAPI
+  /mini/api/article/get/list:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 分页
+        in: body
+        name: pageInfo
+        required: true
+        schema:
+          $ref: '#/definitions/request.PageInfo'
+      - description: 文章分类
+        in: body
+        name: cateInfo
+        required: true
+        schema:
+          $ref: '#/definitions/request.ArticleCategory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"msg":"success","data":{}}'
+          schema:
+            type: string
+      summary: 获取文章列表
+      tags:
+      - ArticleAPI
+  /mini/api/article/get/recommend:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"msg":"success","data":{}}'
+          schema:
+            type: string
+      summary: 获取推荐文章
+      tags:
+      - ArticleAPI
+swagger: "2.0"

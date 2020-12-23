@@ -17,10 +17,11 @@ import (
 
 func main() {
 
-	global.MiNI_VP = core.Viper()          // 初始化Viper
-	global.MINI_LOG = core.Zap()           // 初始化zap日志库
+	global.MiNI_VP = core.Viper() // 初始化Viper
 
-	global.MINI_DB = initialize.Gorm()     // gorm连接数据库
+	global.MINI_LOG = core.Zap() // 初始化zap日志库
+
+	global.MINI_DB = initialize.Gorm() // gorm连接数据库
 
 	// 程序结束前关闭数据库链接
 	db, _ := global.MINI_DB.DB()
@@ -29,4 +30,3 @@ func main() {
 	core.RunWindowsServer("127.0.0.1:7000")
 
 }
-
